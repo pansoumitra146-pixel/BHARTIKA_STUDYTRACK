@@ -1,0 +1,335 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+
+  background-image: url("my-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: white;
+  position: relative;
+}
+
+/* Dark overlay over photograph */
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 9, 22, 0.62);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+
+/* Main container */
+
+
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  gap: 15px;
+}
+
+.header h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  color: #cbd5e1;
+  margin-top: 5px;
+}
+
+.date {
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+/* Welcome section */
+
+.welcome {
+  margin-bottom: 35px;
+}
+
+.welcome h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #d1d5db;
+}
+
+/* Dashboard */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card,
+.panel {
+  background: rgba(15, 23, 42, 0.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.17);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.stat-card {
+  padding: 24px;
+}
+
+.stat-card span {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  font-size: 27px;
+  margin-top: 12px;
+}
+
+/* Panels */
+
+.panel {
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+.panel h2 {
+  font-size: 21px;
+  margin-bottom: 22px;
+}
+
+/* Input section */
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  background: rgba(255,255,255,0.09);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #60a5fa;
+}
+
+input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+button {
+  padding: 13px 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+#message {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #86efac;
+}
+
+/* Goal */
+
+.goal-setting {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.goal-setting input {
+  max-width: 250px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+.progress-bar {
+  height: 12px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: #22c55e;
+  border-radius: 20px;
+  transition: width 0.4s;
+}
+
+#goalStatus {
+  margin-top: 12px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* Chart */
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+/* History table */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+
+th, td {
+  text-align: left;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+th {
+  color: #93c5fd;
+}
+
+td {
+  color: #e2e8f0;
+}
+
+.delete-btn {
+  background: #dc2626;
+  padding: 8px 12px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  color: #94a3b8;
+  padding: 25px 0;
+  font-size: 12px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: 92%;
+    padding: 22px 0;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .welcome h2 {
+    font-size: 30px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 19px;
+  }
+
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 19px;
+  }
+
+  .goal-setting {
+    flex-direction: column;
+  }
+
+  .goal-setting input {
+    max-width: 100%;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+}
